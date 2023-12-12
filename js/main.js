@@ -37,3 +37,15 @@ tabs.forEach(tab => {
         document.querySelector(`[data-item="item${id}"]`).classList.add('active');
     });
 });
+
+document.querySelector('.btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    let span = document.querySelector('.res');
+    setTimeout(() => {
+        span.classList.add('visible')
+    }, 500)
+    setTimeout(() => {
+        span.classList.remove('visible')
+    }, 3000)
+
+})
