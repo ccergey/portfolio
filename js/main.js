@@ -1,3 +1,4 @@
+// swiper
 const swiper = new Swiper('.swiper', {
     slidesPerView: 1,
     speed: 800,
@@ -18,10 +19,13 @@ const swiper = new Swiper('.swiper', {
 
 });
 
+// lightbox
 const lightbox = GLightbox({
     moreLength: 200,
 });
 
+
+// tabs
 const tabs = document.querySelectorAll('.tabs-label');
 const tabsContents = document.querySelectorAll('.tab-content');
 tabs.forEach(tab => {
@@ -29,7 +33,9 @@ tabs.forEach(tab => {
         tabs.forEach(item => {
             item.classList.remove('active')
         })
+
         this.classList.add('active');
+
         let id = this.dataset.tab;
         tabsContents.forEach(item => {
             item.classList.remove('active')
@@ -38,14 +44,26 @@ tabs.forEach(tab => {
     });
 });
 
-document.querySelector('.btn').addEventListener('click', function(e) {
-    e.preventDefault();
-    let span = document.querySelector('.res');
-    setTimeout(() => {
-        span.classList.add('visible')
-    }, 500)
-    setTimeout(() => {
-        span.classList.remove('visible')
-    }, 3000)
 
-})
+// form
+let btn = document.querySelector('.btn');
+if (btn) {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        let form = document.querySelector('.contact-form');
+
+        // получить данные из формы
+        // преобразовать в JSON
+        // отправить асинхронный запрос с помощью fetch
+        // вывести пользователю ответ - ok/error
+
+        let span = document.querySelector('.res');
+        setTimeout(() => {
+            span.classList.add('visible')
+        }, 500)
+        setTimeout(() => {
+            span.classList.remove('visible')
+        }, 3000)
+
+    })
+}
